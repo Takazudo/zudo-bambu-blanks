@@ -1,0 +1,25 @@
+{
+  "schema":"zudo-surface-preview/v2",
+  "engineVersion":"2.1.0",
+  "units":"mm",
+  "panel":{
+    "id":"cad-3u-20hp","hp":20,"width":101.298286,"height":128.496956,"studyThickness":2,
+    "holes":[
+      {"type":"slot","x":91.13,"y":2.858482,"width":10.28,"height":3.2,"radius":1.6},
+      {"type":"slot","x":10.17,"y":2.868482,"width":10.28,"height":3.2,"radius":1.6},
+      {"type":"slot","x":10.16,"y":125.638482,"width":10.28,"height":3.2,"radius":1.6},
+      {"type":"slot","x":91.14,"y":125.648482,"width":10.28,"height":3.2,"radius":1.6}
+    ]
+  },
+  "artwork":{
+    "rectangle":{"x":2,"y":12.25,"width":97.298286,"height":103.996956},
+    "patternId":"basket-weave","name":"Smoke basket weave","kind":"regional",
+    "composition":{"mode":"single"},
+    "regions":[
+      {"id":0,"polygon":[[2,12.25],[50.649143,12.25],[50.649143,64.248478],[2,64.248478]],"angle":0},
+      {"id":1,"polygon":[[50.649143,12.25],[99.298286,12.25],[99.298286,64.248478],[50.649143,64.248478]],"angle":90},
+      {"id":2,"polygon":[[2,64.248478],[50.649143,64.248478],[50.649143,116.246956],[2,116.246956]],"angle":90},
+      {"id":3,"polygon":[[50.649143,64.248478],[99.298286,64.248478],[99.298286,116.246956],[50.649143,116.246956]],"angle":0}
+    ]
+  }
+}

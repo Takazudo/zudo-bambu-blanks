@@ -26,6 +26,7 @@ Requirements:
 - Python 3.10+
 
 ```bash
+npm install
 npm run dev
 ```
 
