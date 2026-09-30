@@ -1,0 +1,19 @@
+{
+  "name": "zudo-bambu-blanks",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 build.py",
+    "dev": "node scripts/dev.mjs",
+    "test:generator": "python3 scripts/generate_3mf.py inspect assets/h2d-empty.3mf",
+    "test": "python3 tests/generator_smoke.py"
+  },
+  "engines": {
+    "node": ">=20",
+    "python": ">=3.10"
+  },
+  "dependencies": {
+    "three": "0.169.0"
+  }
+}
