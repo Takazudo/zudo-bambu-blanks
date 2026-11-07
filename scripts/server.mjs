@@ -76,6 +76,14 @@ export function precheckRecipe(recipe) {
   };
 }
 
+// Pass through only what interpreters need to start (pyenv/asdf shims need HOME, Windows needs SYSTEMROOT/TEMP).
+const PASS_ENV = ['PATH', 'HOME', 'USERPROFILE', 'PYENV_ROOT', 'PYENV_VERSION', 'ASDF_DIR', 'ASDF_DATA_DIR', 'SYSTEMROOT', 'TEMP', 'TMP', 'TMPDIR'];
+function childEnv() {
+  const env = {PYTHONIOENCODING: 'utf-8', PYTHONDONTWRITEBYTECODE: '1', LANG: 'C.UTF-8'};
+  for (const key of PASS_ENV) if (process.env[key] !== undefined) env[key] = process.env[key];
+  return env;
+}
+
 function runProcess(cmd, args, {cwd, timeoutMs, maxOutputBytes}) {
   return new Promise(resolvePromise => {
     let stdout = '', stderr = '', size = 0, timedOut = false, settled = false;
@@ -83,7 +91,7 @@ function runProcess(cmd, args, {cwd, timeoutMs, maxOutputBytes}) {
     const finish = result => { if (!settled) { settled = true; clearTimeout(timer); resolvePromise(result); } };
     try {
       child = spawn(cmd, args, {cwd, shell: false, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'],
-        env: {PATH: process.env.PATH ?? '', PYTHONIOENCODING: 'utf-8', PYTHONDONTWRITEBYTECODE: '1', LANG: 'C.UTF-8'}});
+        env: childEnv()});
     } catch (error) {
       return finish({code: null, error, stdout, stderr});
     }
@@ -132,13 +140,14 @@ export function createApp(overrides = {}) {
         : 'The template set in BAMBU_TEMPLATE was not found.';
     } else if (python.available) {
       const info = await runProcess(config.python, [GENERATOR, 'template-info', config.template], {cwd: root, timeoutMs: 20_000, maxOutputBytes: config.maxOutputBytes});
-      if (info.code === 0) {
-        const d = JSON.parse(info.stdout);
+      let d = null;
+      try { d = info.code === 0 ? JSON.parse(info.stdout) : null; } catch { d = null; }
+      if (d) {
         template = {...template, ok: true, printer: d.printer_model, printerProfile: d.printer_profile, processProfile: d.process_profile,
           nozzle: d.nozzle_diameter, filaments: d.filament_profiles, bedType: d.bed_type, layerHeight: d.layer_height_mm,
           initialLayerHeight: d.initial_layer_height_mm, modifierHeight: d.modifier_top_mm};
       } else {
-        template = {...template, ok: false, message: generatorError(info, 'template check', config.python)};
+        template = {...template, ok: false, message: info.code === 0 ? 'Template check returned unreadable output.' : generatorError(info, 'template check', config.python)};
       }
     }
     environment = {checked: true, python, template, ready: python.available && template.ok === true};
@@ -174,7 +183,7 @@ export function createApp(overrides = {}) {
     if (gen.code !== 0) return setPhase(job, 'failed', {error: generatorError(gen, 'generation', config.python)});
     let report;
     try { report = JSON.parse(gen.stdout); } catch { return setPhase(job, 'failed', {error: 'Generator returned an unreadable report.'}); }
-    const hp = Number.isFinite(Number(report.panel?.hp)) ? `${Number(report.panel.hp)}hp` : 'custom';
+    const hp = report.panel?.hp != null && Number.isFinite(Number(report.panel.hp)) ? `${Number(report.panel.hp)}hp` : 'custom';
     job.filename = `zudo-blank-${hp}-${slug(report.pattern?.id, 'pattern')}-${job.id.slice(0, 8)}.3mf`;
     setPhase(job, 'validating', {report});
     const val = await runProcess(config.python, [GENERATOR, 'validate', ...files], opts);
@@ -245,20 +254,26 @@ export function createApp(overrides = {}) {
     let st;
     try { st = statSync(path); } catch { return send(res, 404, {error: 'Not found'}); }
     if (!st.isFile()) return send(res, 404, {error: 'Not found'});
-    res.writeHead(200, {'content-type': type, 'content-length': st.size, 'x-content-type-options': 'nosniff', 'cache-control': 'no-store', ...extra});
-    createReadStream(path).pipe(res);
+    const stream = createReadStream(path);
+    stream.once('error', () => { if (!res.headersSent) send(res, 404, {error: 'Not found'}); else res.destroy(); });
+    stream.once('open', () => {
+      res.writeHead(200, {'content-type': type, 'content-length': st.size, 'x-content-type-options': 'nosniff', 'cache-control': 'no-store', ...extra});
+      stream.pipe(res);
+    });
   }
 
   function readBody(req) {
     return new Promise((ok, reject) => {
-      let size = 0;
+      let size = 0, tooLarge = false;
       const chunks = [];
+      if (Number(req.headers['content-length']) > config.maxBodyBytes) tooLarge = true;
       req.on('data', chunk => {
         size += chunk.length;
-        if (size > config.maxBodyBytes) { reject(new HttpError(413, 'Recipe is too large.')); req.destroy(); return; }
-        chunks.push(chunk);
+        if (size > config.maxBodyBytes) tooLarge = true;
+        if (!tooLarge) chunks.push(chunk);
       });
-      req.on('end', () => ok(Buffer.concat(chunks)));
+      // Drain the rest of an oversized body so the 413 reply reaches the client.
+      req.on('end', () => (tooLarge ? reject(new HttpError(413, 'Recipe is too large.')) : ok(Buffer.concat(chunks))));
       req.on('error', reject);
     });
   }
@@ -278,13 +293,13 @@ export function createApp(overrides = {}) {
     const path = url.pathname;
 
     if (path === '/api/status' && req.method === 'GET') {
-      if (!environment.checked) await checkEnvironment();
+      if (!environment.ready) await checkEnvironment();
       return send(res, 200, {ok: environment.ready, generator: 'regional-modifiers', unsliced: true, python: environment.python, template: environment.template,
         limits: {maxConcurrent: config.maxConcurrent, maxQueued: config.maxQueued, timeoutSeconds: config.timeoutMs / 1000, retainedJobs: config.maxJobs}});
     }
     if (path === '/api/jobs' && req.method === 'POST') {
       if (!/^application\/json\b/i.test(req.headers['content-type'] || '')) throw new HttpError(415, 'Send the recipe as application/json.');
-      if (!environment.checked) await checkEnvironment();
+      if (!environment.ready) await checkEnvironment();
       const body = await readBody(req);
       let recipe;
       try { recipe = JSON.parse(body.toString('utf8')); } catch { throw new HttpError(400, 'Request body is not valid JSON.'); }
@@ -338,7 +353,6 @@ export function createApp(overrides = {}) {
         server.once('error', reject);
         server.listen(config.port, config.host, () => {
           config.port = server.address().port;
-          checkEnvironment().catch(() => {});
           ok(server);
         });
       });

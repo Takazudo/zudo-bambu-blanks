@@ -589,7 +589,7 @@ def template_profile(settings):
         'initial_layer_height_mm': first,
         'modifier_top_mm': modifier_top,
         'modifier_slice_window_mm': [lower, upper],
-        'printable_height_mm': first_float(settings.get('printable_height', 0), 'printable_height'),
+        'printable_height_mm': first_float(settings.get('printable_height'), 'printable_height'),
         'common_area': common,
         'excludes': excludes,
         'bottom_surface_pattern': settings.get('bottom_surface_pattern'),
@@ -753,7 +753,10 @@ def validate_recipe(recipe):
         b = bbox(poly)
         if b[0] < rx - TOL or b[1] < ry - TOL or b[2] > rx + rw + TOL or b[3] > ry + rh + TOL:
             fail(f'Region {i} extends outside the artwork rectangle')
-        poly = [(min(max(x, rx), rx + rw), min(max(y, ry), ry + rh)) for x, y in poly]
+        poly = clean_polygon([(min(max(x, rx), rx + rw), min(max(y, ry), ry + rh)) for x, y in poly])
+        if len(poly) < 3 or abs(signed_area(poly)) < LIMITS['min_region_area_mm2']:
+            skipped += 1
+            continue
         area = abs(signed_area(poly))
         if area < LIMITS['tiny_region_area_mm2']:
             tiny += 1
@@ -835,7 +838,8 @@ def bed_loop(poly, w, h, ccw=True):
 def bed_angle(angle, offset):
     # Linear part of to_bed is -I (mirror 'x') or a Y-down→Y-up flip ('none').
     a = angle if FACE_DOWN_MIRROR == 'x' else -angle
-    return ((a + offset) % 180.0 + 180.0) % 180.0
+    # Round before wrapping so values like 179.9999999999 become 0, never 180.
+    return round(((a + offset) % 180.0 + 180.0) % 180.0, 6) % 180.0
 
 
 # --------------------------------------------------------------------------- build
@@ -909,7 +913,7 @@ def build(recipe, template, output, angle_offset=ANGLE_OFFSET_DEG):
         add_mesh(resources, next_id, mv, mf)
         angle = bed_angle(r['angle'], angle_offset)
         parts.append({'id': next_id, 'name': f'Pattern region {k} ({fmt(round(angle, 3))}°)', 'subtype': 'modifier_part',
-                      'settings': {'bottom_surface_pattern': 'alignedrectilinear', 'bottom_surface_density': '100%', 'infill_direction': fmt(round(angle, 6))},
+                      'settings': {'bottom_surface_pattern': 'alignedrectilinear', 'bottom_surface_density': '100%', 'infill_direction': fmt(angle)},
                       'role': 'region', 'source_index': r['source_index'], 'recipe_angle': r['angle']})
         next_id += 1
 

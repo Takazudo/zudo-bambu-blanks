@@ -101,8 +101,9 @@ test('rejects unsupported and malformed recipes before running python', async ()
   assert.equal((await post('{not json')).status, 400);
   assert.equal((await post(fixture('12hp-basket-weave'), {'content-type': 'text/plain'})).status, 415);
   const huge = JSON.stringify({schema: 'zudo-surface-preview/v2', pad: 'x'.repeat(5 * 1024 * 1024)});
-  const res = await post(huge).catch(e => ({status: 413, error: e}));
+  const res = await post(huge);
   assert.equal(res.status, 413);
+  assert.match((await res.json()).error, /too large/);
 });
 
 test('geometry errors from python become failed jobs with useful messages', async () => {
