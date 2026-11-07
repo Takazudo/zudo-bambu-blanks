@@ -1,0 +1,1064 @@
+{
+ "schema": "zudo-surface-preview/v2",
+ "engineVersion": "2.0.0",
+ "units": "mm",
+ "coordinateSystem": "Finished-face top-left; X right, Y down. Printer transforms and face-down mirroring have not been applied.",
+ "panel": {
+  "id": "cad-3u-20hp",
+  "hp": 20,
+  "width": 101.298286,
+  "height": 128.496956,
+  "studyThickness": 2,
+  "outer": [
+   [
+    101.298286,
+    128.496956
+   ],
+   [
+    0,
+    128.496956
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    101.298286,
+    0
+   ]
+  ],
+  "holes": [
+   {
+    "type": "slot",
+    "x": 91.13,
+    "y": 2.858482,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   },
+   {
+    "type": "slot",
+    "x": 10.17,
+    "y": 2.868482,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   },
+   {
+    "type": "slot",
+    "x": 10.16,
+    "y": 125.638482,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   },
+   {
+    "type": "slot",
+    "x": 91.14,
+    "y": 125.648482,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   }
+  ],
+  "sourceThickness": 1.6,
+  "sourceUrl": "https://github.com/Takazudo/zudo-blanks/blob/b1a3ef9e85f73d93fdfe216d0ca0c13dae41560d/panels/art-ufo-v2/ufo-panel.kicad_pcb",
+  "sourceGeometry": "KiCad Edge.Cuts centerlines and pad drill geometry; positions normalized to top-left of Edge.Cuts bounds. Artwork excluded."
+ },
+ "artwork": {
+  "rectangle": {
+   "x": 2,
+   "y": 12.25,
+   "width": 97.298286,
+   "height": 103.99695600000001
+  },
+  "patternId": "basket-weave",
+  "name": "Basket weave + Diagonal bands",
+  "kind": "regional",
+  "parameters": {
+   "width": 97.298286,
+   "height": 103.99695600000001,
+   "pitch": 0.62,
+   "scale": 1,
+   "rotation": 0,
+   "hatchAngle": 0,
+   "stretchX": 1,
+   "stretchY": 1,
+   "offsetX": 0,
+   "offsetY": 0,
+   "amplitude": 0.45,
+   "detail": 6,
+   "jitter": 0.3,
+   "seed": 17,
+   "symmetry": "none"
+  },
+  "composition": {
+   "mode": "split-y",
+   "ratio": 0.5,
+   "secondId": "diagonal-bands",
+   "secondRotation": 90
+  },
+  "regions": [
+   {
+    "polygon": [
+     [
+      2,
+      12.25
+     ],
+     [
+      10.6491,
+      12.25
+     ],
+     [
+      10.6491,
+      24.2485
+     ],
+     [
+      2,
+      24.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 0,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      10.6491,
+      12.25
+     ],
+     [
+      26.6491,
+      12.25
+     ],
+     [
+      26.6491,
+      24.2485
+     ],
+     [
+      10.6491,
+      24.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 1,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      26.6491,
+      12.25
+     ],
+     [
+      42.6491,
+      12.25
+     ],
+     [
+      42.6491,
+      24.2485
+     ],
+     [
+      26.6491,
+      24.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 2,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      42.6491,
+      12.25
+     ],
+     [
+      58.6491,
+      12.25
+     ],
+     [
+      58.6491,
+      24.2485
+     ],
+     [
+      42.6491,
+      24.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 3,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      58.6491,
+      12.25
+     ],
+     [
+      74.6491,
+      12.25
+     ],
+     [
+      74.6491,
+      24.2485
+     ],
+     [
+      58.6491,
+      24.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 4,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      74.6491,
+      12.25
+     ],
+     [
+      90.6491,
+      12.25
+     ],
+     [
+      90.6491,
+      24.2485
+     ],
+     [
+      74.6491,
+      24.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 5,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      90.6491,
+      12.25
+     ],
+     [
+      99.2983,
+      12.25
+     ],
+     [
+      99.2983,
+      24.2485
+     ],
+     [
+      90.6491,
+      24.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 6,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      2,
+      24.2485
+     ],
+     [
+      10.6491,
+      24.2485
+     ],
+     [
+      10.6491,
+      40.2485
+     ],
+     [
+      2,
+      40.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 7,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      10.6491,
+      24.2485
+     ],
+     [
+      26.6491,
+      24.2485
+     ],
+     [
+      26.6491,
+      40.2485
+     ],
+     [
+      10.6491,
+      40.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 8,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      26.6491,
+      24.2485
+     ],
+     [
+      42.6491,
+      24.2485
+     ],
+     [
+      42.6491,
+      40.2485
+     ],
+     [
+      26.6491,
+      40.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 9,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      42.6491,
+      24.2485
+     ],
+     [
+      58.6491,
+      24.2485
+     ],
+     [
+      58.6491,
+      40.2485
+     ],
+     [
+      42.6491,
+      40.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 10,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      58.6491,
+      24.2485
+     ],
+     [
+      74.6491,
+      24.2485
+     ],
+     [
+      74.6491,
+      40.2485
+     ],
+     [
+      58.6491,
+      40.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 11,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      74.6491,
+      24.2485
+     ],
+     [
+      90.6491,
+      24.2485
+     ],
+     [
+      90.6491,
+      40.2485
+     ],
+     [
+      74.6491,
+      40.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 12,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      90.6491,
+      24.2485
+     ],
+     [
+      99.2983,
+      24.2485
+     ],
+     [
+      99.2983,
+      40.2485
+     ],
+     [
+      90.6491,
+      40.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 13,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      2,
+      40.2485
+     ],
+     [
+      10.6491,
+      40.2485
+     ],
+     [
+      10.6491,
+      56.2485
+     ],
+     [
+      2,
+      56.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 14,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      10.6491,
+      40.2485
+     ],
+     [
+      26.6491,
+      40.2485
+     ],
+     [
+      26.6491,
+      56.2485
+     ],
+     [
+      10.6491,
+      56.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 15,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      26.6491,
+      40.2485
+     ],
+     [
+      42.6491,
+      40.2485
+     ],
+     [
+      42.6491,
+      56.2485
+     ],
+     [
+      26.6491,
+      56.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 16,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      42.6491,
+      40.2485
+     ],
+     [
+      58.6491,
+      40.2485
+     ],
+     [
+      58.6491,
+      56.2485
+     ],
+     [
+      42.6491,
+      56.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 17,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      58.6491,
+      40.2485
+     ],
+     [
+      74.6491,
+      40.2485
+     ],
+     [
+      74.6491,
+      56.2485
+     ],
+     [
+      58.6491,
+      56.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 18,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      74.6491,
+      40.2485
+     ],
+     [
+      90.6491,
+      40.2485
+     ],
+     [
+      90.6491,
+      56.2485
+     ],
+     [
+      74.6491,
+      56.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 19,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      90.6491,
+      40.2485
+     ],
+     [
+      99.2983,
+      40.2485
+     ],
+     [
+      99.2983,
+      56.2485
+     ],
+     [
+      90.6491,
+      56.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 20,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      2,
+      64.2485
+     ],
+     [
+      2,
+      56.2485
+     ],
+     [
+      10.6491,
+      56.2485
+     ],
+     [
+      10.6491,
+      64.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 21,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      10.6491,
+      64.2485
+     ],
+     [
+      10.6491,
+      56.2485
+     ],
+     [
+      26.6491,
+      56.2485
+     ],
+     [
+      26.6491,
+      64.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 22,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      26.6491,
+      64.2485
+     ],
+     [
+      26.6491,
+      56.2485
+     ],
+     [
+      42.6491,
+      56.2485
+     ],
+     [
+      42.6491,
+      64.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 23,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      42.6491,
+      64.2485
+     ],
+     [
+      42.6491,
+      56.2485
+     ],
+     [
+      58.6491,
+      56.2485
+     ],
+     [
+      58.6491,
+      64.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 24,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      58.6491,
+      64.2485
+     ],
+     [
+      58.6491,
+      56.2485
+     ],
+     [
+      74.6491,
+      56.2485
+     ],
+     [
+      74.6491,
+      64.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 25,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      74.6491,
+      64.2485
+     ],
+     [
+      74.6491,
+      56.2485
+     ],
+     [
+      90.6491,
+      56.2485
+     ],
+     [
+      90.6491,
+      64.2485
+     ]
+    ],
+    "angle": 0,
+    "id": 26,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      90.6491,
+      64.2485
+     ],
+     [
+      90.6491,
+      56.2485
+     ],
+     [
+      99.2983,
+      56.2485
+     ],
+     [
+      99.2983,
+      64.2485
+     ]
+    ],
+    "angle": 90,
+    "id": 27,
+    "layer": 0
+   },
+   {
+    "polygon": [
+     [
+      99.2983,
+      111.5993
+     ],
+     [
+      99.2983,
+      116.247
+     ],
+     [
+      94.6507,
+      116.247
+     ]
+    ],
+    "angle": 135,
+    "id": 28,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      99.2983,
+      95.5993
+     ],
+     [
+      99.2983,
+      111.5993
+     ],
+     [
+      94.6507,
+      116.247
+     ],
+     [
+      78.6507,
+      116.247
+     ]
+    ],
+    "angle": 45,
+    "id": 29,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      99.2983,
+      79.5993
+     ],
+     [
+      99.2983,
+      95.5993
+     ],
+     [
+      78.6507,
+      116.247
+     ],
+     [
+      62.6507,
+      116.247
+     ]
+    ],
+    "angle": 135,
+    "id": 30,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      98.6491,
+      64.2485
+     ],
+     [
+      99.2983,
+      64.2485
+     ],
+     [
+      99.2983,
+      79.5993
+     ],
+     [
+      62.6507,
+      116.247
+     ],
+     [
+      46.6507,
+      116.247
+     ]
+    ],
+    "angle": 45,
+    "id": 31,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      82.6491,
+      64.2485
+     ],
+     [
+      98.6491,
+      64.2485
+     ],
+     [
+      46.6507,
+      116.247
+     ],
+     [
+      30.6507,
+      116.247
+     ]
+    ],
+    "angle": 135,
+    "id": 32,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      66.6491,
+      64.2485
+     ],
+     [
+      82.6491,
+      64.2485
+     ],
+     [
+      30.6507,
+      116.247
+     ],
+     [
+      14.6507,
+      116.247
+     ]
+    ],
+    "angle": 45,
+    "id": 33,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      50.6491,
+      64.2485
+     ],
+     [
+      66.6491,
+      64.2485
+     ],
+     [
+      14.6507,
+      116.247
+     ],
+     [
+      2,
+      116.247
+     ],
+     [
+      2,
+      112.8976
+     ]
+    ],
+    "angle": 135,
+    "id": 34,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      34.6491,
+      64.2485
+     ],
+     [
+      50.6491,
+      64.2485
+     ],
+     [
+      2,
+      112.8976
+     ],
+     [
+      2,
+      96.8976
+     ]
+    ],
+    "angle": 45,
+    "id": 35,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      18.6491,
+      64.2485
+     ],
+     [
+      34.6491,
+      64.2485
+     ],
+     [
+      2,
+      96.8976
+     ],
+     [
+      2,
+      80.8976
+     ]
+    ],
+    "angle": 135,
+    "id": 36,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      2.6491,
+      64.2485
+     ],
+     [
+      18.6491,
+      64.2485
+     ],
+     [
+      2,
+      80.8976
+     ],
+     [
+      2,
+      64.8976
+     ]
+    ],
+    "angle": 45,
+    "id": 37,
+    "layer": 1
+   },
+   {
+    "polygon": [
+     [
+      2.6491,
+      64.2485
+     ],
+     [
+      2,
+      64.8976
+     ],
+     [
+      2,
+      64.2485
+     ]
+    ],
+    "angle": 135,
+    "id": 38,
+    "layer": 1
+   }
+  ]
+ },
+ "reference": null,
+ "appearance": {
+  "color": "#bd8551",
+  "lightAngle": 35,
+  "sheen": 65,
+  "showArtworkBoundary": true,
+  "renderStyle": "satin",
+  "strokeRatio": 0.7,
+  "overlayOpacity": 0.45
+ },
+ "editorState": {
+  "panelId": "cad-3u-20hp",
+  "patternId": "basket-weave",
+  "thickness": 2,
+  "endZone": 12.25,
+  "sideInset": 2,
+  "pitch": 0.62,
+  "scale": 1,
+  "rotation": 0,
+  "color": "#bd8551",
+  "lightAngle": 35,
+  "sheen": 65,
+  "showZones": true,
+  "view": "angle",
+  "imageFit": "cover",
+  "imageZoom": 1,
+  "imageOffsetX": 0,
+  "imageOffsetY": 0,
+  "amplitude": 0.45,
+  "detail": 6,
+  "jitter": 0.3,
+  "seed": 17,
+  "stretchX": 1,
+  "stretchY": 1,
+  "offsetX": 0,
+  "offsetY": 0,
+  "hatchAngle": 0,
+  "symmetry": "none",
+  "renderStyle": "satin",
+  "strokeRatio": 0.7,
+  "compositionMode": "split-y",
+  "secondaryPattern": "diagonal-bands",
+  "secondaryRotation": 90,
+  "splitRatio": 0.5,
+  "overlayOpacity": 0.45
+ },
+ "manufacturing": {
+  "status": "unsliced-study",
+  "plainZones": {
+   "pattern": "monotonic",
+   "angle": 45
+  },
+  "intent": "Decoration on the build-plate face only; modifier Z range depends on first-layer settings.",
+  "route": "These polygons can guide separate first-layer modifiers with different fill directions. The recipe records region geometry and angles; a slicer adapter and a sliced preview are still needed.",
+  "notes": [
+   "Line pitch is a display parameter, not a calibrated extrusion width.",
+   "Perimeters can reduce the actual decorated fill span.",
+   "The preview is not a 3MF file, G-code, or a Bambu Studio slice.",
+   "Complete directional-region design; requires a modifier adapter and slicer validation.",
+   "Complete directional-region design; requires a modifier adapter and slicer validation.",
+   "Two designs are clipped into non-overlapping parts of the artwork rectangle."
+  ]
+ }
+}

@@ -44,8 +44,9 @@
       renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
       renderer.domElement.setAttribute('aria-label','Orbitable panel surface model');renderer.domElement.tabIndex=0;$('modelView').appendChild(renderer.domElement);
       scene=new T.Scene();camera=new T.PerspectiveCamera(32,1,.1,4000);camera.up.set(0,1,0);
-      controls=new window.OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.addEventListener('change',requestRender);
-      const pmrem=new T.PMREMGenerator(renderer),room=new window.RoomEnvironment();
+      const Orbit=T.OrbitControls||window.OrbitControls,Room=T.RoomEnvironment||window.RoomEnvironment;if(!Orbit||!Room)throw new Error('Three.js add-ons (OrbitControls/RoomEnvironment) did not load');
+      controls=new Orbit(camera,renderer.domElement);controls.enableDamping=false;controls.addEventListener('change',requestRender);
+      const pmrem=new T.PMREMGenerator(renderer),room=new Room();
       scene.environment=pmrem.fromScene(room,.04).texture;room.dispose();pmrem.dispose();
       scene.add(new T.HemisphereLight(0xffffff,0x485765,1.25));
       light=new T.DirectionalLight(0xfff4df,2.2);light.position.set(100,80,200);scene.add(light);
@@ -56,6 +57,7 @@
       observer=new ResizeObserver(()=>{resize();});observer.observe($('stage'));resize();fit();
       renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();$('webglNotice').hidden=false;applyView('flat');});
     }catch(error){
+      console.warn('3D preview unavailable; using flat view.',error);
       if(renderer)renderer.dispose();renderer=null;$('modelView').replaceChildren();$('webglNotice').hidden=false;$('viewAngle').disabled=true;
     }
   }

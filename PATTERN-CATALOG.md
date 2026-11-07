@@ -1,6 +1,6 @@
 # Pattern catalog — 78 algorithms
 
-All are design previews, not sliced output. “Regional” indicates a polygon-partition candidate for a future modifier adapter.
+All are design previews, not sliced output. The 20 **regional** patterns (family “Directional regions”) can be exported with **Make 3MF** as experimental, unsliced Bambu Studio projects with one first-layer modifier per region; see [README](README.md#printable-pattern-families). Every other kind stays preview-only.
 
 ## Directional regions
 

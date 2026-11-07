@@ -1,3 +1,12 @@
+# generated
+dist/
 .tmp/
+web/src/app.js
+node_modules/
+test-results/
+__pycache__/
+*.pyc
+# local
 .DS_Store
 assets/h2d-empty-localtest.3mf
+*.local.3mf
