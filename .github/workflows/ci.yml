@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  generator:
+    name: Generator (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Template summary
+        run: python3 scripts/generate_3mf.py template-info assets/h2d-empty.3mf
+      - name: Generator tests (fixtures, geometry, negative cases)
+        run: npm run test:generator
+
+  app:
+    name: App, API and browser (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies (lockfile)
+        run: npm ci
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Build
+        run: npm run build
+      - name: Generated files stay out of Git
+        run: |
+          git status --porcelain
+          test -z "$(git status --porcelain)"
+      - name: API tests (recipe → API → Python → validation → download)
+        run: npm run test:api
+      - name: Browser tests (desktop, mobile, Make 3MF)
+        run: npm run test:e2e
+      - name: Upload screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-screenshots-node${{ matrix.node }}
+          path: .tmp/*.png
+          if-no-files-found: ignore

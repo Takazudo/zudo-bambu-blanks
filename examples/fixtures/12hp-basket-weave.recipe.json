@@ -1,0 +1,930 @@
+{
+ "schema": "zudo-surface-preview/v2",
+ "engineVersion": "2.0.0",
+ "units": "mm",
+ "coordinateSystem": "Finished-face top-left; X right, Y down. Printer transforms and face-down mirroring have not been applied.",
+ "panel": {
+  "id": "cad-3u-12hp",
+  "hp": 12,
+  "width": 60.6,
+  "height": 128.5,
+  "studyThickness": 2,
+  "outer": [
+   [
+    0,
+    0
+   ],
+   [
+    60.6,
+    0
+   ],
+   [
+    60.6,
+    128.5
+   ],
+   [
+    0,
+    128.5
+   ]
+  ],
+  "holes": [
+   {
+    "type": "slot",
+    "x": 10.16,
+    "y": 3,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   },
+   {
+    "type": "slot",
+    "x": 50.44,
+    "y": 3,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   },
+   {
+    "type": "slot",
+    "x": 10.16,
+    "y": 125.5,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   },
+   {
+    "type": "slot",
+    "x": 50.44,
+    "y": 125.5,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   }
+  ],
+  "sourceThickness": 1.6,
+  "sourceUrl": "https://github.com/Takazudo/zudo-blanks/blob/b1a3ef9e85f73d93fdfe216d0ca0c13dae41560d/panels/alumi-blanks-v1-3U-12hp/12hp.kicad_pcb",
+  "sourceGeometry": "KiCad Edge.Cuts centerlines and pad drill geometry; positions normalized to top-left of Edge.Cuts bounds. Artwork excluded."
+ },
+ "artwork": {
+  "rectangle": {
+   "x": 2,
+   "y": 12.25,
+   "width": 56.6,
+   "height": 104
+  },
+  "patternId": "basket-weave",
+  "name": "Basket weave",
+  "kind": "regional",
+  "parameters": {
+   "width": 56.6,
+   "height": 104,
+   "pitch": 0.62,
+   "scale": 1,
+   "rotation": 0,
+   "hatchAngle": 0,
+   "stretchX": 1,
+   "stretchY": 1,
+   "offsetX": 0,
+   "offsetY": 0,
+   "amplitude": 0.45,
+   "detail": 6,
+   "jitter": 0.3,
+   "seed": 17,
+   "symmetry": "none"
+  },
+  "composition": null,
+  "regions": [
+   {
+    "polygon": [
+     [
+      2,
+      12.25
+     ],
+     [
+      6.3,
+      12.25
+     ],
+     [
+      6.3,
+      24.25
+     ],
+     [
+      2,
+      24.25
+     ]
+    ],
+    "angle": 90,
+    "id": 0
+   },
+   {
+    "polygon": [
+     [
+      6.3,
+      12.25
+     ],
+     [
+      22.3,
+      12.25
+     ],
+     [
+      22.3,
+      24.25
+     ],
+     [
+      6.3,
+      24.25
+     ]
+    ],
+    "angle": 0,
+    "id": 1
+   },
+   {
+    "polygon": [
+     [
+      22.3,
+      12.25
+     ],
+     [
+      38.3,
+      12.25
+     ],
+     [
+      38.3,
+      24.25
+     ],
+     [
+      22.3,
+      24.25
+     ]
+    ],
+    "angle": 90,
+    "id": 2
+   },
+   {
+    "polygon": [
+     [
+      38.3,
+      12.25
+     ],
+     [
+      54.3,
+      12.25
+     ],
+     [
+      54.3,
+      24.25
+     ],
+     [
+      38.3,
+      24.25
+     ]
+    ],
+    "angle": 0,
+    "id": 3
+   },
+   {
+    "polygon": [
+     [
+      54.3,
+      12.25
+     ],
+     [
+      58.6,
+      12.25
+     ],
+     [
+      58.6,
+      24.25
+     ],
+     [
+      54.3,
+      24.25
+     ]
+    ],
+    "angle": 90,
+    "id": 4
+   },
+   {
+    "polygon": [
+     [
+      2,
+      24.25
+     ],
+     [
+      6.3,
+      24.25
+     ],
+     [
+      6.3,
+      40.25
+     ],
+     [
+      2,
+      40.25
+     ]
+    ],
+    "angle": 0,
+    "id": 5
+   },
+   {
+    "polygon": [
+     [
+      6.3,
+      24.25
+     ],
+     [
+      22.3,
+      24.25
+     ],
+     [
+      22.3,
+      40.25
+     ],
+     [
+      6.3,
+      40.25
+     ]
+    ],
+    "angle": 90,
+    "id": 6
+   },
+   {
+    "polygon": [
+     [
+      22.3,
+      24.25
+     ],
+     [
+      38.3,
+      24.25
+     ],
+     [
+      38.3,
+      40.25
+     ],
+     [
+      22.3,
+      40.25
+     ]
+    ],
+    "angle": 0,
+    "id": 7
+   },
+   {
+    "polygon": [
+     [
+      38.3,
+      24.25
+     ],
+     [
+      54.3,
+      24.25
+     ],
+     [
+      54.3,
+      40.25
+     ],
+     [
+      38.3,
+      40.25
+     ]
+    ],
+    "angle": 90,
+    "id": 8
+   },
+   {
+    "polygon": [
+     [
+      54.3,
+      24.25
+     ],
+     [
+      58.6,
+      24.25
+     ],
+     [
+      58.6,
+      40.25
+     ],
+     [
+      54.3,
+      40.25
+     ]
+    ],
+    "angle": 0,
+    "id": 9
+   },
+   {
+    "polygon": [
+     [
+      2,
+      40.25
+     ],
+     [
+      6.3,
+      40.25
+     ],
+     [
+      6.3,
+      56.25
+     ],
+     [
+      2,
+      56.25
+     ]
+    ],
+    "angle": 90,
+    "id": 10
+   },
+   {
+    "polygon": [
+     [
+      6.3,
+      40.25
+     ],
+     [
+      22.3,
+      40.25
+     ],
+     [
+      22.3,
+      56.25
+     ],
+     [
+      6.3,
+      56.25
+     ]
+    ],
+    "angle": 0,
+    "id": 11
+   },
+   {
+    "polygon": [
+     [
+      22.3,
+      40.25
+     ],
+     [
+      38.3,
+      40.25
+     ],
+     [
+      38.3,
+      56.25
+     ],
+     [
+      22.3,
+      56.25
+     ]
+    ],
+    "angle": 90,
+    "id": 12
+   },
+   {
+    "polygon": [
+     [
+      38.3,
+      40.25
+     ],
+     [
+      54.3,
+      40.25
+     ],
+     [
+      54.3,
+      56.25
+     ],
+     [
+      38.3,
+      56.25
+     ]
+    ],
+    "angle": 0,
+    "id": 13
+   },
+   {
+    "polygon": [
+     [
+      54.3,
+      40.25
+     ],
+     [
+      58.6,
+      40.25
+     ],
+     [
+      58.6,
+      56.25
+     ],
+     [
+      54.3,
+      56.25
+     ]
+    ],
+    "angle": 90,
+    "id": 14
+   },
+   {
+    "polygon": [
+     [
+      2,
+      56.25
+     ],
+     [
+      6.3,
+      56.25
+     ],
+     [
+      6.3,
+      72.25
+     ],
+     [
+      2,
+      72.25
+     ]
+    ],
+    "angle": 0,
+    "id": 15
+   },
+   {
+    "polygon": [
+     [
+      6.3,
+      56.25
+     ],
+     [
+      22.3,
+      56.25
+     ],
+     [
+      22.3,
+      72.25
+     ],
+     [
+      6.3,
+      72.25
+     ]
+    ],
+    "angle": 90,
+    "id": 16
+   },
+   {
+    "polygon": [
+     [
+      22.3,
+      56.25
+     ],
+     [
+      38.3,
+      56.25
+     ],
+     [
+      38.3,
+      72.25
+     ],
+     [
+      22.3,
+      72.25
+     ]
+    ],
+    "angle": 0,
+    "id": 17
+   },
+   {
+    "polygon": [
+     [
+      38.3,
+      56.25
+     ],
+     [
+      54.3,
+      56.25
+     ],
+     [
+      54.3,
+      72.25
+     ],
+     [
+      38.3,
+      72.25
+     ]
+    ],
+    "angle": 90,
+    "id": 18
+   },
+   {
+    "polygon": [
+     [
+      54.3,
+      56.25
+     ],
+     [
+      58.6,
+      56.25
+     ],
+     [
+      58.6,
+      72.25
+     ],
+     [
+      54.3,
+      72.25
+     ]
+    ],
+    "angle": 0,
+    "id": 19
+   },
+   {
+    "polygon": [
+     [
+      2,
+      72.25
+     ],
+     [
+      6.3,
+      72.25
+     ],
+     [
+      6.3,
+      88.25
+     ],
+     [
+      2,
+      88.25
+     ]
+    ],
+    "angle": 90,
+    "id": 20
+   },
+   {
+    "polygon": [
+     [
+      6.3,
+      72.25
+     ],
+     [
+      22.3,
+      72.25
+     ],
+     [
+      22.3,
+      88.25
+     ],
+     [
+      6.3,
+      88.25
+     ]
+    ],
+    "angle": 0,
+    "id": 21
+   },
+   {
+    "polygon": [
+     [
+      22.3,
+      72.25
+     ],
+     [
+      38.3,
+      72.25
+     ],
+     [
+      38.3,
+      88.25
+     ],
+     [
+      22.3,
+      88.25
+     ]
+    ],
+    "angle": 90,
+    "id": 22
+   },
+   {
+    "polygon": [
+     [
+      38.3,
+      72.25
+     ],
+     [
+      54.3,
+      72.25
+     ],
+     [
+      54.3,
+      88.25
+     ],
+     [
+      38.3,
+      88.25
+     ]
+    ],
+    "angle": 0,
+    "id": 23
+   },
+   {
+    "polygon": [
+     [
+      54.3,
+      72.25
+     ],
+     [
+      58.6,
+      72.25
+     ],
+     [
+      58.6,
+      88.25
+     ],
+     [
+      54.3,
+      88.25
+     ]
+    ],
+    "angle": 90,
+    "id": 24
+   },
+   {
+    "polygon": [
+     [
+      2,
+      88.25
+     ],
+     [
+      6.3,
+      88.25
+     ],
+     [
+      6.3,
+      104.25
+     ],
+     [
+      2,
+      104.25
+     ]
+    ],
+    "angle": 0,
+    "id": 25
+   },
+   {
+    "polygon": [
+     [
+      6.3,
+      88.25
+     ],
+     [
+      22.3,
+      88.25
+     ],
+     [
+      22.3,
+      104.25
+     ],
+     [
+      6.3,
+      104.25
+     ]
+    ],
+    "angle": 90,
+    "id": 26
+   },
+   {
+    "polygon": [
+     [
+      22.3,
+      88.25
+     ],
+     [
+      38.3,
+      88.25
+     ],
+     [
+      38.3,
+      104.25
+     ],
+     [
+      22.3,
+      104.25
+     ]
+    ],
+    "angle": 0,
+    "id": 27
+   },
+   {
+    "polygon": [
+     [
+      38.3,
+      88.25
+     ],
+     [
+      54.3,
+      88.25
+     ],
+     [
+      54.3,
+      104.25
+     ],
+     [
+      38.3,
+      104.25
+     ]
+    ],
+    "angle": 90,
+    "id": 28
+   },
+   {
+    "polygon": [
+     [
+      54.3,
+      88.25
+     ],
+     [
+      58.6,
+      88.25
+     ],
+     [
+      58.6,
+      104.25
+     ],
+     [
+      54.3,
+      104.25
+     ]
+    ],
+    "angle": 0,
+    "id": 29
+   },
+   {
+    "polygon": [
+     [
+      2,
+      116.25
+     ],
+     [
+      2,
+      104.25
+     ],
+     [
+      6.3,
+      104.25
+     ],
+     [
+      6.3,
+      116.25
+     ]
+    ],
+    "angle": 90,
+    "id": 30
+   },
+   {
+    "polygon": [
+     [
+      6.3,
+      116.25
+     ],
+     [
+      6.3,
+      104.25
+     ],
+     [
+      22.3,
+      104.25
+     ],
+     [
+      22.3,
+      116.25
+     ]
+    ],
+    "angle": 0,
+    "id": 31
+   },
+   {
+    "polygon": [
+     [
+      22.3,
+      116.25
+     ],
+     [
+      22.3,
+      104.25
+     ],
+     [
+      38.3,
+      104.25
+     ],
+     [
+      38.3,
+      116.25
+     ]
+    ],
+    "angle": 90,
+    "id": 32
+   },
+   {
+    "polygon": [
+     [
+      38.3,
+      116.25
+     ],
+     [
+      38.3,
+      104.25
+     ],
+     [
+      54.3,
+      104.25
+     ],
+     [
+      54.3,
+      116.25
+     ]
+    ],
+    "angle": 0,
+    "id": 33
+   },
+   {
+    "polygon": [
+     [
+      54.3,
+      116.25
+     ],
+     [
+      54.3,
+      104.25
+     ],
+     [
+      58.6,
+      104.25
+     ],
+     [
+      58.6,
+      116.25
+     ]
+    ],
+    "angle": 90,
+    "id": 34
+   }
+  ]
+ },
+ "reference": null,
+ "appearance": {
+  "color": "#bd8551",
+  "lightAngle": 35,
+  "sheen": 65,
+  "showArtworkBoundary": true,
+  "renderStyle": "satin",
+  "strokeRatio": 0.7,
+  "overlayOpacity": 0.45
+ },
+ "editorState": {
+  "panelId": "cad-3u-12hp",
+  "patternId": "basket-weave",
+  "thickness": 2,
+  "endZone": 12.25,
+  "sideInset": 2,
+  "pitch": 0.62,
+  "scale": 1,
+  "rotation": 0,
+  "color": "#bd8551",
+  "lightAngle": 35,
+  "sheen": 65,
+  "showZones": true,
+  "view": "angle",
+  "imageFit": "cover",
+  "imageZoom": 1,
+  "imageOffsetX": 0,
+  "imageOffsetY": 0,
+  "amplitude": 0.45,
+  "detail": 6,
+  "jitter": 0.3,
+  "seed": 17,
+  "stretchX": 1,
+  "stretchY": 1,
+  "offsetX": 0,
+  "offsetY": 0,
+  "hatchAngle": 0,
+  "symmetry": "none",
+  "renderStyle": "satin",
+  "strokeRatio": 0.7,
+  "compositionMode": "single",
+  "secondaryPattern": "wave-field",
+  "secondaryRotation": 90,
+  "splitRatio": 0.5,
+  "overlayOpacity": 0.45
+ },
+ "manufacturing": {
+  "status": "unsliced-study",
+  "plainZones": {
+   "pattern": "monotonic",
+   "angle": 45
+  },
+  "intent": "Decoration on the build-plate face only; modifier Z range depends on first-layer settings.",
+  "route": "These polygons can guide separate first-layer modifiers with different fill directions. The recipe records region geometry and angles; a slicer adapter and a sliced preview are still needed.",
+  "notes": [
+   "Line pitch is a display parameter, not a calibrated extrusion width.",
+   "Perimeters can reduce the actual decorated fill span.",
+   "The preview is not a 3MF file, G-code, or a Bambu Studio slice.",
+   "Complete directional-region design; requires a modifier adapter and slicer validation."
+  ]
+ }
+}

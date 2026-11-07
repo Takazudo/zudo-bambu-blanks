@@ -1,0 +1,27 @@
+{
+  "name": "zudo-bambu-blanks",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Local Surface Lab and unsliced Bambu Studio 3MF generator for Takazudo Modular blank panels",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs",
+    "fixtures": "node scripts/make-fixtures.mjs",
+    "test": "npm run test:generator && npm run test:api",
+    "test:generator": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
+    "test:api": "node --test tests/api.test.mjs",
+    "test:e2e": "node --test tests/e2e.test.mjs",
+    "test:all": "npm test && npm run test:e2e"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "dependencies": {
+    "three": "0.169.0"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

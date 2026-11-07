@@ -1,0 +1,320 @@
+{
+ "schema": "zudo-surface-preview/v2",
+ "engineVersion": "2.0.0",
+ "units": "mm",
+ "coordinateSystem": "Finished-face top-left; X right, Y down. Printer transforms and face-down mirroring have not been applied.",
+ "panel": {
+  "id": "cad-3u-4hp",
+  "hp": 4,
+  "width": 19.999172,
+  "height": 128.500604,
+  "studyThickness": 2,
+  "outer": [
+   [
+    19.999172,
+    128.500604
+   ],
+   [
+    0,
+    128.500604
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    19.999172,
+    0
+   ]
+  ],
+  "holes": [
+   {
+    "type": "slot",
+    "x": 6.019588,
+    "y": 2.975305,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   },
+   {
+    "type": "slot",
+    "x": 13.929588,
+    "y": 125.475305,
+    "width": 10.28,
+    "height": 3.2,
+    "radius": 1.6
+   }
+  ],
+  "sourceThickness": 1.6,
+  "sourceUrl": "https://github.com/Takazudo/zudo-blanks/blob/b1a3ef9e85f73d93fdfe216d0ca0c13dae41560d/panels/alumi-blanks-v1-3U-4hp/4hp.kicad_pcb",
+  "sourceGeometry": "KiCad Edge.Cuts centerlines and pad drill geometry; positions normalized to top-left of Edge.Cuts bounds. Artwork excluded."
+ },
+ "artwork": {
+  "rectangle": {
+   "x": 2,
+   "y": 12.25,
+   "width": 15.999172000000002,
+   "height": 104.00060400000001
+  },
+  "patternId": "triangular-facets",
+  "name": "Triangular facets",
+  "kind": "regional",
+  "parameters": {
+   "width": 15.999172000000002,
+   "height": 104.00060400000001,
+   "pitch": 0.62,
+   "scale": 2,
+   "rotation": 0,
+   "hatchAngle": 0,
+   "stretchX": 1,
+   "stretchY": 1,
+   "offsetX": 0,
+   "offsetY": 0,
+   "amplitude": 0.45,
+   "detail": 6,
+   "jitter": 0.3,
+   "seed": 17,
+   "symmetry": "none"
+  },
+  "composition": null,
+  "regions": [
+   {
+    "polygon": [
+     [
+      17.9992,
+      12.25
+     ],
+     [
+      17.9992,
+      28.7835
+     ],
+     [
+      9.1423,
+      12.25
+     ]
+    ],
+    "angle": 60,
+    "id": 0
+   },
+   {
+    "polygon": [
+     [
+      2,
+      12.25
+     ],
+     [
+      9.1423,
+      12.25
+     ],
+     [
+      17.9992,
+      28.7835
+     ],
+     [
+      17.9992,
+      30.6503
+     ],
+     [
+      2,
+      30.6503
+     ]
+    ],
+    "angle": 120,
+    "id": 1
+   },
+   {
+    "polygon": [
+     [
+      2,
+      30.6503
+     ],
+     [
+      17.9992,
+      30.6503
+     ],
+     [
+      17.9992,
+      32.5171
+     ],
+     [
+      2,
+      62.3835
+     ]
+    ],
+    "angle": 0,
+    "id": 2
+   },
+   {
+    "polygon": [
+     [
+      2,
+      62.3835
+     ],
+     [
+      17.9992,
+      32.5171
+     ],
+     [
+      17.9992,
+      64.2503
+     ],
+     [
+      2,
+      64.2503
+     ]
+    ],
+    "angle": 60,
+    "id": 3
+   },
+   {
+    "polygon": [
+     [
+      17.9992,
+      95.9835
+     ],
+     [
+      2,
+      66.1171
+     ],
+     [
+      2,
+      64.2503
+     ],
+     [
+      17.9992,
+      64.2503
+     ]
+    ],
+    "angle": 60,
+    "id": 4
+   },
+   {
+    "polygon": [
+     [
+      2,
+      66.1171
+     ],
+     [
+      17.9992,
+      95.9835
+     ],
+     [
+      17.9992,
+      97.8503
+     ],
+     [
+      2,
+      97.8503
+     ]
+    ],
+    "angle": 120,
+    "id": 5
+   },
+   {
+    "polygon": [
+     [
+      2,
+      116.2506
+     ],
+     [
+      2,
+      97.8503
+     ],
+     [
+      17.9992,
+      97.8503
+     ],
+     [
+      17.9992,
+      99.7171
+     ],
+     [
+      9.1423,
+      116.2506
+     ]
+    ],
+    "angle": 0,
+    "id": 6
+   },
+   {
+    "polygon": [
+     [
+      9.1423,
+      116.2506
+     ],
+     [
+      17.9992,
+      99.7171
+     ],
+     [
+      17.9992,
+      116.2506
+     ]
+    ],
+    "angle": 60,
+    "id": 7
+   }
+  ]
+ },
+ "reference": null,
+ "appearance": {
+  "color": "#bd8551",
+  "lightAngle": 35,
+  "sheen": 65,
+  "showArtworkBoundary": true,
+  "renderStyle": "satin",
+  "strokeRatio": 0.7,
+  "overlayOpacity": 0.45
+ },
+ "editorState": {
+  "panelId": "cad-3u-4hp",
+  "patternId": "triangular-facets",
+  "thickness": 2,
+  "endZone": 12.25,
+  "sideInset": 2,
+  "pitch": 0.62,
+  "scale": 2,
+  "rotation": 0,
+  "color": "#bd8551",
+  "lightAngle": 35,
+  "sheen": 65,
+  "showZones": true,
+  "view": "angle",
+  "imageFit": "cover",
+  "imageZoom": 1,
+  "imageOffsetX": 0,
+  "imageOffsetY": 0,
+  "amplitude": 0.45,
+  "detail": 6,
+  "jitter": 0.3,
+  "seed": 17,
+  "stretchX": 1,
+  "stretchY": 1,
+  "offsetX": 0,
+  "offsetY": 0,
+  "hatchAngle": 0,
+  "symmetry": "none",
+  "renderStyle": "satin",
+  "strokeRatio": 0.7,
+  "compositionMode": "single",
+  "secondaryPattern": "wave-field",
+  "secondaryRotation": 90,
+  "splitRatio": 0.5,
+  "overlayOpacity": 0.45
+ },
+ "manufacturing": {
+  "status": "unsliced-study",
+  "plainZones": {
+   "pattern": "monotonic",
+   "angle": 45
+  },
+  "intent": "Decoration on the build-plate face only; modifier Z range depends on first-layer settings.",
+  "route": "These polygons can guide separate first-layer modifiers with different fill directions. The recipe records region geometry and angles; a slicer adapter and a sliced preview are still needed.",
+  "notes": [
+   "Line pitch is a display parameter, not a calibrated extrusion width.",
+   "Perimeters can reduce the actual decorated fill span.",
+   "The preview is not a 3MF file, G-code, or a Bambu Studio slice.",
+   "Complete directional-region design; requires a modifier adapter and slicer validation."
+  ]
+ }
+}

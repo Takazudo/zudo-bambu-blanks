@@ -1,0 +1,22 @@
+.lab-dialog.mf-dialog{max-width:620px;height:auto;max-height:calc(100dvh - 40px)}
+.mf-body{padding:20px 30px 22px;overflow-y:auto;display:flex;flex-direction:column;gap:18px}
+.mf-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 22px;margin:0}
+.mf-summary div{min-width:0}
+.mf-summary dt{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#93a89b;margin-bottom:4px}
+.mf-summary dd{margin:0;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+.mf-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;counter-reset:mf}
+.mf-steps li{counter-increment:mf;border:1px solid #3d4c43;border-radius:8px;padding:9px 10px;font-size:12px;color:#8fa593}
+.mf-steps li::before{content:counter(mf) '  ';color:#5f7366}
+.mf-steps li[data-state=active]{border-color:var(--accent);color:var(--text)}
+.mf-steps li[data-state=active]::after{content:'…'}
+.mf-steps li[data-state=done]{border-color:#6f9a7c;color:#cfe3d4}
+.mf-steps li[data-state=done]::before{content:'✓  ';color:#8fc49c}
+.mf-steps li[data-state=failed]{border-color:#c27a6a;color:#f0c9bf}
+.mf-message{margin:0;font-size:13px;line-height:1.5;min-height:1.5em}
+.mf-message[data-tone=error]{color:#f0b3a5}
+.mf-warnings{margin:0;padding:10px 14px 10px 28px;border:1px solid #5d5338;border-radius:8px;background:#2a2719;font-size:12px;line-height:1.5;color:#ead9ac}
+.mf-dialog .dialog-footer span{flex:1 1 200px;line-height:1.5}
+.mf-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.button-link{display:inline-flex;align-items:center;border:1px solid var(--rule);border-radius:6px;padding:.55rem .85rem;font-size:.875rem;line-height:1.2;text-decoration:none;white-space:nowrap}
+.button-link.primary{color:#201a14}
+@media(max-width:640px){.mf-body{padding:16px 17px}.mf-summary{grid-template-columns:minmax(0,1fr)}.mf-steps li{font-size:11px;padding:8px}.mf-dialog .dialog-footer{flex-direction:column;align-items:stretch}.mf-actions{justify-content:flex-end}}
